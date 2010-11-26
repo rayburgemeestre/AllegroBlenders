@@ -247,7 +247,7 @@ int32 Color_HlsToRgb(float64 Hue, float64 Lumination, float64 Saturation, uint8 
 
 #define HexToRgb(hex)               (MakeRgb(((hex & 0xFF0000) >> 16), ((hex & 0x00FF00) >> 8 ), (hex & 0xFF))) 
 
-int blender_lighten(int basecolor, int &blendcolor)
+int blender_lighten(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Lighten(getr(basecolor), getr(blendcolor)),
@@ -256,7 +256,7 @@ int blender_lighten(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_darken(int basecolor, int &blendcolor)
+int blender_darken(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Darken(getr(basecolor), getr(blendcolor)),
@@ -265,7 +265,7 @@ int blender_darken(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_multiply(int basecolor, int &blendcolor)
+int blender_multiply(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Multiply(getr(basecolor), getr(blendcolor)),
@@ -274,7 +274,7 @@ int blender_multiply(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_average(int basecolor, int &blendcolor)
+int blender_average(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Average(getr(basecolor), getr(blendcolor)),
@@ -283,7 +283,7 @@ int blender_average(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_add(int basecolor, int &blendcolor)
+int blender_add(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Add(getr(basecolor), getr(blendcolor)),
@@ -292,7 +292,7 @@ int blender_add(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_subtract(int basecolor, int &blendcolor)
+int blender_subtract(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Subtract(getr(basecolor), getr(blendcolor)),
@@ -301,7 +301,7 @@ int blender_subtract(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_difference(int basecolor, int &blendcolor)
+int blender_difference(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Difference(getr(basecolor), getr(blendcolor)),
@@ -310,7 +310,7 @@ int blender_difference(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_negation(int basecolor, int &blendcolor)
+int blender_negation(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Negation(getr(basecolor), getr(blendcolor)),
@@ -319,7 +319,7 @@ int blender_negation(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_screen(int basecolor, int &blendcolor)
+int blender_screen(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Screen(getr(basecolor), getr(blendcolor)),
@@ -328,7 +328,7 @@ int blender_screen(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_exclusion(int basecolor, int &blendcolor)
+int blender_exclusion(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Exclusion(getr(basecolor), getr(blendcolor)),
@@ -337,7 +337,7 @@ int blender_exclusion(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_overlay(int basecolor, int &blendcolor)
+int blender_overlay(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Overlay(getr(basecolor), getr(blendcolor)),
@@ -346,7 +346,7 @@ int blender_overlay(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_softlight(int basecolor, int &blendcolor)
+int blender_softlight(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_SoftLight(getr(basecolor), getr(blendcolor)),
@@ -355,7 +355,7 @@ int blender_softlight(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_hardlight(int basecolor, int &blendcolor)
+int blender_hardlight(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_HardLight(getr(basecolor), getr(blendcolor)),
@@ -364,7 +364,7 @@ int blender_hardlight(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_colordodge(int basecolor, int &blendcolor)
+int blender_colordodge(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_ColorDodge(getr(basecolor), getr(blendcolor)),
@@ -373,7 +373,7 @@ int blender_colordodge(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_colorburn(int basecolor, int &blendcolor)
+int blender_colorburn(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_ColorBurn(getr(basecolor), getr(blendcolor)),
@@ -382,7 +382,7 @@ int blender_colorburn(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_lineardodge(int basecolor, int &blendcolor)
+int blender_lineardodge(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_LinearDodge(getr(basecolor), getr(blendcolor)),
@@ -390,7 +390,7 @@ int blender_lineardodge(int basecolor, int &blendcolor)
 		ChannelBlend_LinearDodge(getb(basecolor), getb(blendcolor))
 	);
 }
-int blender_linearburn(int basecolor, int &blendcolor)
+int blender_linearburn(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_LinearBurn(getr(basecolor), getr(blendcolor)),
@@ -398,7 +398,7 @@ int blender_linearburn(int basecolor, int &blendcolor)
 		ChannelBlend_LinearBurn(getb(basecolor), getb(blendcolor))
 	);
 }
-int blender_linearlight(int basecolor, int &blendcolor)
+int blender_linearlight(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_LinearLight(getr(basecolor), getr(blendcolor)),
@@ -407,7 +407,7 @@ int blender_linearlight(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_vividlight(int basecolor, int &blendcolor)
+int blender_vividlight(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_VividLight(getr(basecolor), getr(blendcolor)),
@@ -415,7 +415,7 @@ int blender_vividlight(int basecolor, int &blendcolor)
 		ChannelBlend_VividLight(getb(basecolor), getb(blendcolor))
 	);
 }
-int blender_pinlight(int basecolor, int &blendcolor)
+int blender_pinlight(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_PinLight(getr(basecolor), getr(blendcolor)),
@@ -424,7 +424,7 @@ int blender_pinlight(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_hardmix(int basecolor, int &blendcolor)
+int blender_hardmix(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_HardMix(getr(basecolor), getr(blendcolor)),
@@ -433,7 +433,7 @@ int blender_hardmix(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_reflect(int basecolor, int &blendcolor)
+int blender_reflect(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Reflect(getr(basecolor), getr(blendcolor)),
@@ -441,7 +441,7 @@ int blender_reflect(int basecolor, int &blendcolor)
 		ChannelBlend_Reflect(getb(basecolor), getb(blendcolor))
 	);
 }
-int blender_glow(int basecolor, int &blendcolor)
+int blender_glow(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Glow(getr(basecolor), getr(blendcolor)),
@@ -449,7 +449,7 @@ int blender_glow(int basecolor, int &blendcolor)
 		ChannelBlend_Glow(getb(basecolor), getb(blendcolor))
 	);
 }
-int blender_phoenix(int basecolor, int &blendcolor)
+int blender_phoenix(int &basecolor, int &blendcolor)
 {
 	return makecol(
 		ChannelBlend_Phoenix(getr(basecolor), getr(blendcolor)),
@@ -458,7 +458,7 @@ int blender_phoenix(int basecolor, int &blendcolor)
 	);
 }
 
-int blender_hue(int basecolor, int &blendcolor)
+int blender_hue(int &basecolor, int &blendcolor)
 {
     float64 HueB, LuminationB, SaturationB;                                     
     float64 HueL, LuminationL, SaturationL;                                     
@@ -471,7 +471,7 @@ int blender_hue(int basecolor, int &blendcolor)
 	return makecol(r, g, b);
 }
 
-int blender_saturation(int basecolor, int &blendcolor)
+int blender_saturation(int &basecolor, int &blendcolor)
 {
     float64 HueB, LuminationB, SaturationB;                                     
     float64 HueL, LuminationL, SaturationL;                                     
@@ -484,7 +484,7 @@ int blender_saturation(int basecolor, int &blendcolor)
 	return makecol(r, g, b);
 }
 
-int blender_color(int basecolor, int &blendcolor)
+int blender_color(int &basecolor, int &blendcolor)
 {
     float64 HueB, LuminationB, SaturationB;                                     
     float64 HueL, LuminationL, SaturationL;                                     
@@ -497,7 +497,7 @@ int blender_color(int basecolor, int &blendcolor)
 	return makecol(r, g, b);
 }
 
-int blender_luminosity(int basecolor, int &blendcolor)
+int blender_luminosity(int &basecolor, int &blendcolor)
 {
     float64 HueB, LuminationB, SaturationB;                                     
     float64 HueL, LuminationL, SaturationL;                                     
@@ -511,11 +511,12 @@ int blender_luminosity(int basecolor, int &blendcolor)
 }
 
 
-typedef int (*blender_func)(int basecolor, int &blendcolor);
+typedef int (*blender_func_ptr)(int &basecolor, int &blendcolor);
 
-void put_blended_pixel(BITMAP *dest, int x, int y, int color, blender_func ptr)
+void put_blended_pixel(BITMAP *dest, int x, int y, int color, blender_func_ptr blender_function)
 {
-	putpixel(dest, x, y, ptr(getpixel(dest, x, y), color));
+	int basecolor = getpixel(dest, x, y);
+	putpixel(dest, x, y, blender_function(basecolor, color));
 }
 
 #endif // __AL_BLEND__
