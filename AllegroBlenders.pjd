@@ -283,7 +283,7 @@
           <long name="locked">0</long>
           <string name="template-name">"VC++ Project"</string>
           <bool name="dirty">0</bool>
-          <long name="makefile-last-written">0</long>
+          <long name="makefile-last-written">-8519680</long>
           <string name="Compiler name">"VC++ Project"</string>
           <string name="Build mode">"Release"</string>
           <string name="Unicode mode">"Unicode"</string>

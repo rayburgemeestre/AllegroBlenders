@@ -1,3 +1,7 @@
 AllegroBlenders.pjd.bak
-.gitignore~
-README~
+AllegroBlenders.sdf
+AllegroBlenders.suo
+AllegroBlenders.vcxproj.user
+VCProjectDebug
+VCProjectRelease
+*~
