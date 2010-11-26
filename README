@@ -1,0 +1,57 @@
+### Installation
+
+The tarball or zip isn't required, browsing the repository and downloading
+source/al_blend.h should be sufficient. You only need that in your project.
+It contains a test program that displays the results of all the blenders in a
+wxWidgets GUI application. You can view it's source (all the interesting stuff
+is in MainWindow.cpp) for example usage.
+
+### Usage
+
+Put al_blend.h in your project somewhere and include it.  Or put it in the
+allegro include directory, i.e. /usr/local/src/allegro/include or
+C:\allegro\include.
+
+Now instead of using the allegro blenders with getpixel() and putpixel(), you
+can use put_blended_pixel().
+
+	put_blended_pixel(): 
+		Writes a pixel into a bitmap with specific blender.
+
+	Description:
+		void put_blended_pixel(BITMAP *bmp, int x, int y, int color,
+			(*blender_func)(int basecolor, int &blendcolor)); 
+
+	Example:
+		put_blended_pixel(screen, x, y, somecolor, blender_lighten);
+
+### Available blenders
+
+	blender_darken
+	blender_multiply
+	blender_average
+	blender_add
+	blender_subtract
+	blender_difference
+	blender_negation
+	blender_screen
+	blender_exclusion
+	blender_overlay
+	blender_softlight
+	blender_hardlight
+	blender_colordodge
+	blender_colorburn
+	blender_lineardodge
+	blender_linearburn
+	blender_linearlight
+	blender_vividlight
+	blender_pinlight
+	blender_hardmix
+	blender_reflect
+	blender_glow
+	blender_phoenix
+	blender_hue
+	blender_saturation
+	blender_color
+	blender_luminosity
+
