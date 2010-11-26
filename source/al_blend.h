@@ -1,3 +1,5 @@
+#ifndef __AL_BLEND__
+#define __AL_BLEND__
 /*         ______   ___    ___
  *        /\  _  \ /\_ \  /\_ \
  *        \ \ \L\ \\//\ \ \//\ \      __     __   _ __   ___
@@ -515,3 +517,6 @@ void put_blended_pixel(BITMAP *dest, int x, int y, int color, blender_func ptr)
 {
 	putpixel(dest, x, y, ptr(getpixel(dest, x, y), color));
 }
+
+#endif // __AL_BLEND__
+/* vim: set tabstop=4 sts=4 noexpandtab: */
