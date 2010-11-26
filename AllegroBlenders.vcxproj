@@ -97,6 +97,7 @@
 		</ResourceCompile>
 	</ItemDefinitionGroup>
 	<ItemGroup>
+		<ClInclude Include="source\al_blend.h" />
 		<ClInclude Include="source\test_app\Application.h" />
 		<ClInclude Include="source\test_app\MainWindow.h" />
 	</ItemGroup>
