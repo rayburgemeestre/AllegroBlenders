@@ -39,6 +39,10 @@ typedef unsigned char uint8;
 #define min(a,b)            (((a) < (b)) ? (a) : (b))
 #endif
 
+/////////////////////////////////////////////////////////////////////
+// Nathan Moinvaziri's macros
+/////////////////////////////////////////////////////////////////////
+
 #define ChannelBlend_Normal(B,L)     ((uint8)(B)) 
 #define ChannelBlend_Lighten(B,L)    ((uint8)((L > B) ? L:B)) 
 #define ChannelBlend_Darken(B,L)     ((uint8)((L > B) ? B:L)) 
@@ -246,6 +250,11 @@ int32 Color_HlsToRgb(float64 Hue, float64 Lumination, float64 Saturation, uint8 
 #define MakeArgb(a,r,g,b)           (((uint32)(uint8)(a) << 24) | ((uint32)(uint8)(r) << 16) | ((uint16)(uint8)(g) << 8 ) | (uint8)(b)) 
 
 #define HexToRgb(hex)               (MakeRgb(((hex & 0xFF0000) >> 16), ((hex & 0x00FF00) >> 8 ), (hex & 0xFF))) 
+
+
+/////////////////////////////////////////////////////////////////////
+// The blender functions
+/////////////////////////////////////////////////////////////////////
 
 int blender_lighten(int &basecolor, int &blendcolor)
 {
@@ -460,11 +469,11 @@ int blender_phoenix(int &basecolor, int &blendcolor)
 
 int blender_hue(int &basecolor, int &blendcolor)
 {
-    float64 HueB, LuminationB, SaturationB;                                     
-    float64 HueL, LuminationL, SaturationL;                                     
+	float64 HueB, LuminationB, SaturationB;									 
+	float64 HueL, LuminationL, SaturationL;									 
 
 	Color_RgbToHls(getr(basecolor),getg(basecolor),getb(basecolor), &HueB, &LuminationB, &SaturationB);
-    Color_RgbToHls(getr(blendcolor),getg(blendcolor), getb(blendcolor), &HueL, &LuminationL, &SaturationL);    
+	Color_RgbToHls(getr(blendcolor),getg(blendcolor), getb(blendcolor), &HueL, &LuminationL, &SaturationL);	
 	
 	uint8 r, g, b;
 	Color_HlsToRgb(HueL,LuminationB,SaturationB, &r, &g, &b);
@@ -473,11 +482,11 @@ int blender_hue(int &basecolor, int &blendcolor)
 
 int blender_saturation(int &basecolor, int &blendcolor)
 {
-    float64 HueB, LuminationB, SaturationB;                                     
-    float64 HueL, LuminationL, SaturationL;                                     
+	float64 HueB, LuminationB, SaturationB;									 
+	float64 HueL, LuminationL, SaturationL;									 
 
 	Color_RgbToHls(getr(basecolor),getg(basecolor),getb(basecolor), &HueB, &LuminationB, &SaturationB);
-    Color_RgbToHls(getr(blendcolor),getg(blendcolor), getb(blendcolor), &HueL, &LuminationL, &SaturationL);    
+	Color_RgbToHls(getr(blendcolor),getg(blendcolor), getb(blendcolor), &HueL, &LuminationL, &SaturationL);	
 	
 	uint8 r, g, b;
 	Color_HlsToRgb(HueB,LuminationB,SaturationL, &r, &g, &b);
@@ -486,11 +495,11 @@ int blender_saturation(int &basecolor, int &blendcolor)
 
 int blender_color(int &basecolor, int &blendcolor)
 {
-    float64 HueB, LuminationB, SaturationB;                                     
-    float64 HueL, LuminationL, SaturationL;                                     
+	float64 HueB, LuminationB, SaturationB;									 
+	float64 HueL, LuminationL, SaturationL;									 
 
 	Color_RgbToHls(getr(basecolor),getg(basecolor),getb(basecolor), &HueB, &LuminationB, &SaturationB);
-    Color_RgbToHls(getr(blendcolor),getg(blendcolor), getb(blendcolor), &HueL, &LuminationL, &SaturationL);    
+	Color_RgbToHls(getr(blendcolor),getg(blendcolor), getb(blendcolor), &HueL, &LuminationL, &SaturationL);	
 	
 	uint8 r, g, b;
 	Color_HlsToRgb(HueL,LuminationB,SaturationL, &r, &g, &b);
@@ -499,11 +508,11 @@ int blender_color(int &basecolor, int &blendcolor)
 
 int blender_luminosity(int &basecolor, int &blendcolor)
 {
-    float64 HueB, LuminationB, SaturationB;                                     
-    float64 HueL, LuminationL, SaturationL;                                     
+	float64 HueB, LuminationB, SaturationB;									 
+	float64 HueL, LuminationL, SaturationL;									 
 
 	Color_RgbToHls(getr(basecolor),getg(basecolor),getb(basecolor), &HueB, &LuminationB, &SaturationB);
-    Color_RgbToHls(getr(blendcolor),getg(blendcolor), getb(blendcolor), &HueL, &LuminationL, &SaturationL);    
+	Color_RgbToHls(getr(blendcolor),getg(blendcolor), getb(blendcolor), &HueL, &LuminationL, &SaturationL);	
 	
 	uint8 r, g, b;
 	Color_HlsToRgb(HueB,LuminationL,SaturationB, &r, &g, &b);
