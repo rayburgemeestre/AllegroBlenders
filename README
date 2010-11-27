@@ -20,7 +20,7 @@ can use put_blended_pixel().
 
 	Description:
 		void put_blended_pixel(BITMAP *bmp, int x, int y, int color,
-			(*blender_func)(int basecolor, int &blendcolor)); 
+			(*blender_func)(int &basecolor, int &blendcolor)); 
 
 	Example:
 		put_blended_pixel(screen, x, y, somecolor, blender_lighten);
