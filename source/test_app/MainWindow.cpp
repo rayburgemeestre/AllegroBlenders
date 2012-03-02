@@ -9,13 +9,15 @@
 // Licence:     
 /////////////////////////////////////////////////////////////////////////////
 
+
+/*
 #define ALLEGRO_NO_MAGIC_MAIN
 #define RGB AL_RGB
 #include <allegro.h>
 #include <winalleg.h>
 #include "../al_blend.h"
 #undef RGB
-
+*/
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
 
@@ -325,11 +327,13 @@ void MainWindow::CreateControls()
         sizerOutput->Remove(0);
     }
 
+/*
 	RenderBlendingOutput();
 
 	install_allegro(SYSTEM_NONE, &errno, NULL);
 	set_palette(desktop_palette); // example
 	set_color_depth(32); // example 
+    */
 }
 
 
@@ -462,6 +466,9 @@ void MainWindow::OnPaint( wxPaintEvent& event )
 	WXHDC wxHDC = wxPaintDC::FindDCInCache((wxWindow*) event.GetEventObject());
 	HDC hDC = (HDC) wxHDC;
 
+
+/*
+
 	bool isCacheAvailable = _cachedOutputBitmaps.find(id) != _cachedOutputBitmaps.end();
 	if (isCacheAvailable) {
 		// Cache available
@@ -469,7 +476,6 @@ void MainWindow::OnPaint( wxPaintEvent& event )
 		draw_to_hdc(hDC, cachedBmp, 0, 0); 
 		return;
 	}
-
 	BITMAP *imageBitmap = create_bitmap(250, 188);
 	clear_to_color(imageBitmap, makecol(0, 0, 0));
 
@@ -542,10 +548,12 @@ void MainWindow::OnPaint( wxPaintEvent& event )
 	}
 
 	draw_to_hdc(hDC, baseBitmap, 0, 0); 
-	
+
 	// Store in cache
 	_cachedOutputBitmaps[id] = baseBitmap;
 
 	destroy_bitmap(imageBitmap);
 	destroy_bitmap(blendBitmap);
+    	*/
+    
 }
